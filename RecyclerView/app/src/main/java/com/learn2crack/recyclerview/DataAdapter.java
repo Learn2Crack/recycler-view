@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<String> countries;
-    private TextView tv_country;
 
 
     public DataAdapter(ArrayList<String> countries) {
@@ -26,7 +25,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
 
-        tv_country.setText(countries.get(i));
+        viewHolder.tv_country.setText(countries.get(i));
     }
 
     @Override
@@ -35,6 +34,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        private TextView tv_country;
         public ViewHolder(View view) {
             super(view);
 
