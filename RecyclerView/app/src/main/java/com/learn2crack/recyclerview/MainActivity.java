@@ -42,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (e.getActionMasked() == MotionEvent.ACTION_DOWN){
                     View child = rv.findChildViewUnder(e.getX(), e.getY());
-                    int position = rv.getChildAdapterPosition(child);
-                    Toast.makeText(getApplicationContext(),countries.get(position),Toast.LENGTH_SHORT).show();
+                    if(child != null) {
+                        int position = rv.getChildAdapterPosition(child);
+                        Toast.makeText(getApplicationContext(), countries.get(position), Toast.LENGTH_SHORT).show();
+                    }
                 }
 
                 return false;
